@@ -3,12 +3,16 @@
 {% block page_title %}لیست کتاب‌ها{% endblock page_title %}
 
 {% block content %}
+    <div class="container">
+        <br>
+        <a class="btn btn-outline-success" href="{% url 'book_create' %}">اضافه کردن کتاب</a>
+    </div><br>
     {% for book in books %}
     <div class="alert alert-primary" role="alert">
         <h1>{{book.title}}</h1>
         <h3>{{book.author}}</h3><br>
         <p>{{book.description}}</p>
-        <a class="btn btn-success" href="{{book.get_absolute_url}}">بیشتر</a>
+        <a class="btn btn-outline-primary" href="{{book.get_absolute_url}}">بیشتر</a>
     </div>
     {% endfor %}
 {% endblock content %}

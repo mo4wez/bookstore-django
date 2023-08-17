@@ -11,6 +11,7 @@
     <div class="alert alert-primary" role="alert">
         <h1>{{book.title}}</h1>
         <h3>{{book.author}}</h3><br>
+        <p>{{ book.description | truncatewords:50 }}</p>
         <a class="btn btn-outline-primary" href="{{book.get_absolute_url}}">بیشتر</a>
     </div>
     {% endfor %}

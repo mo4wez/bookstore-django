@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block page_title %}حذف کتاب{% endblock page_title %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="alert alert-primary" role="alert">
+            <h4 class="alert-heading">حذف کتاب</h4>
+            <p>آیا از حذف کتابِ {{book.title}} اطمینان دارید؟</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input class="btn btn-success" type="submit" value="بله"></input>
+                <a class="btn btn-danger" href="{% url 'books_list' %}">خیر</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

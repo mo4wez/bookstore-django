@@ -9,5 +9,7 @@
         <p>{{book.description}}</p>
         <h4>قیمت: {{ book.price }}</h4>
         <a class="btn btn-outline-primary" href="{% url 'books_list' %}">بازگشت به صفحه اصلی</a>
+        <a class="btn btn-outline-dark" href="{% url 'book_update' book.id %}">ویرایش کتاب</a>
+        <a class="btn btn-outline-danger "href="{% url 'book_delete' book.id %}">حذف کتاب</a>
     </div>
 {% endblock content %}

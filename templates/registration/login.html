@@ -1,8 +1,14 @@
 {% extends '_base.html' %}
 
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block page_title %}ورود{% endblock page_title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock styles %}
+
 
 {% block content %}
     <div class="d-flex justify-content-center mt-5" dir="rtl">

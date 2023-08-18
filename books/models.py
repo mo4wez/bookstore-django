@@ -6,7 +6,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     description = models.TextField()
-    price = models.PositiveIntegerField(max_length=9)
+    price = models.PositiveIntegerField()
     cover = models.ImageField(upload_to='covers/', blank=True)
 
     def __str__(self):

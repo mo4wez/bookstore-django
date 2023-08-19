@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 
 
 class Book(models.Model):
+    user = models.ForeignKey(to=get_user_model(), default=1, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     description = models.TextField()
@@ -23,7 +24,7 @@ class Comment(models.Model):
     text = models.TextField()
     is_active = models.BooleanField(default=True)
     recommended = models.BooleanField(default=True)
-    
+
     datetime_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

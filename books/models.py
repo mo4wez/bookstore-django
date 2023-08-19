@@ -2,9 +2,10 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    author = models.CharField(max_length=100)
+    author = models.CharField(max_length=100, default=1)
     description = models.TextField()
     price = models.PositiveIntegerField()
     cover = models.ImageField(upload_to='covers/', blank=True)
@@ -14,6 +15,7 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         return reverse("book_detail", args=[self.id])
+
 
 class Comment(models.Model):
     user = models.ForeignKey(to=get_user_model(), on_delete=models.CASCADE)

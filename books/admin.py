@@ -8,4 +8,4 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'text', 'book', 'datetime_created',)
+    list_display = ('user', 'text', 'book', 'recommended', 'is_active', 'datetime_created',)
